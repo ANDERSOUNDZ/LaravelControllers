@@ -25,9 +25,14 @@ class CategoriesController extends Controller
 
     //INICIO - Funcion que permite enviar o procesar los datos hacia la base
 
-    public function metodoPost(Request $request){
+    public function metodoPost(
+            //Necesitamos procesar los nuevos datos de la categoria dada, y necesitamos una peticion
+            Request $request
+        ){
+
         return 'Aqui se procesan o reciben los datos recibidos de crear categoria y se redirije a otra pagina, puede ser inicio o otros';
         //PÑara evitar reenvios de formularios cuando se recarrga una pagina, hay que redireccionar a otro lado , por motivos de seguirdad
+   
     }
 
     //FIN - Funcion que permite enviar o procesar los datos hacia la base
@@ -50,13 +55,22 @@ class CategoriesController extends Controller
     //FIN - Mostrar el formulario que nos permite editar el formulario
 
     //INICIO - Funcion para procesar el formulario de Editar
-    public function metodoActualizar(){
+    public function metodoActualizar(
+        //Necesitamos procesar los nuevos datos de la categoria dada, y necesitamos una peticion
+        Request $request ,
+        //Aqui ingresamos los parametros que necesitan para editar cierto tipo de categoria, por lo general es el id de la categoria
+        $id
+
+    ){
         return 'Aqui se procesan y se edita una categoria dada.';
     }
     //FIN - Funcion para procesar el formulario de Editar
 
-    public function metodoEliminar(){
-        return 'Aqui se eliminan los datos de una categoria dada';
+    public function metodoEliminar(
+        //Aqui ingresamos los parametros que necesitan para eliminar cierto tipo de categoria, por lo general es el id de la categoria
+        $id
+    ){
+        return 'Aqui va la logica en donde se eliminan los datos de una categoria dada';
     }
 
 }
