@@ -183,9 +183,9 @@ Route::
 //utilizamos la funcion resource
 resource(
     //creamos el prefijo o nombramos el prefijo de la ruta base
-    'categories',
+    'generador',
     //y luego llamamos al controlador que contiene laas funciones de las peticiones http
-    'CategoriesController'
+    'generarAutomaticoClasesControladorCRUD'
 );    
 
 //esto nos permite llamar a todos los metodos y ejecutar las peticiones

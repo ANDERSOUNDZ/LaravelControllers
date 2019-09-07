@@ -13,7 +13,7 @@ class generarAutomaticoClasesControladorCRUD extends Controller
      */
     public function index()
     {
-        //
+        return 'muestra la lista de los datos';
     }
 
     /**
@@ -23,7 +23,7 @@ class generarAutomaticoClasesControladorCRUD extends Controller
      */
     public function create()
     {
-        //
+        return 'muestra el dato';
     }
 
     /**
@@ -34,7 +34,7 @@ class generarAutomaticoClasesControladorCRUD extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return 'este es metodo post que procesa el dato hacia la bd';
     }
 
     /**
@@ -45,7 +45,7 @@ class generarAutomaticoClasesControladorCRUD extends Controller
      */
     public function show($id)
     {
-        //
+        return 'muestra el dato de alguna tabla dada con parametros';
     }
 
     /**
@@ -56,7 +56,8 @@ class generarAutomaticoClasesControladorCRUD extends Controller
      */
     public function edit($id)
     {
-        //
+        return 'muestra el dato a actualizar';
+        //http://127.0.0.1:8000/categories/1/edit
     }
 
     /**
@@ -68,7 +69,8 @@ class generarAutomaticoClasesControladorCRUD extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return 'procesa y actualiza el dato ';
+
     }
 
     /**
@@ -79,6 +81,6 @@ class generarAutomaticoClasesControladorCRUD extends Controller
      */
     public function destroy($id)
     {
-        //
+        return 'Eliminar el dato de la tabla';
     }
 }
