@@ -98,10 +98,12 @@ Route::delete('categories/{category}','CategoriesController@metodoEliminar')
 
 Route::group(['prefix' =>'categories'], function (){
 
+//Como tengo ya el prefijo "Categories", ya no necesito mostrarlo en la ruta del navegador
+
 //INICIO - Conectar una ruta a un controlador
 //Ruta para listar
 
-Route::get('/categories','CategoriesController@primeraFuncion' )
+Route::get('/','CategoriesController@primeraFuncion' )
 //Nombrando la ruta
 ->name('categories.inicio')
 ;
@@ -111,7 +113,7 @@ Route::get('/categories','CategoriesController@primeraFuncion' )
 //INICIO -   Creacion de una Categopria , funcion y llamado desde el controlador
 //Ruta para mostrar el formulario para crear
 
-Route::get('/categories/crear','CategoriesController@crearCategoria')
+Route::get('/crear','CategoriesController@crearCategoria')
 //Nombrando ruta
 ->name('categories.crear')
 ;
@@ -121,7 +123,7 @@ Route::get('/categories/crear','CategoriesController@crearCategoria')
 //INICIO - Ruta para procesar los datos que envia
 //Ruta para  procesar el formulario
 
-Route::post('/categories','CategoriesController@almacenar')
+Route::post('/','CategoriesController@almacenar')
 //Nombrando ruta
 ->name('categories.almacenar')
 ;
@@ -132,7 +134,7 @@ Route::post('/categories','CategoriesController@almacenar')
 //INICIO - Inicio peticiones Http : Metodo update
 //Ruta para actualizar los datos procesados
 //Al comenzar a utilizar variables , podemos pedirle que muestre cierto tipo de categoria, algo asi como si tengo informacion en una tabla, quie r que me muestre solo la categoria Electrodomesticos o otra 
-Route::get('categories/{category}','CategoriesController@mostrarCategoria')
+Route::get('/{category}','CategoriesController@mostrarCategoria')
 //Nombrando ruta
 ->name('categories.mostrarcategoria')
 ;
@@ -140,7 +142,7 @@ Route::get('categories/{category}','CategoriesController@mostrarCategoria')
 //FIN - Inicio peticiones Http : Metodo update
 
 // INICIO - Ruta para mostrar el formulario edit 
-Route::get('/categories/{category}/edit','CategoriesController@metodoEditar')
+Route::get('/{category}/editar','CategoriesController@metodoEditar')
 //Nombrando ruta
 ->name('categories.editarcategoria')
 ;
@@ -149,7 +151,7 @@ Route::get('/categories/{category}/edit','CategoriesController@metodoEditar')
 
 // INICIO - Ruta para procesar y editar una categoria 
 //El verbo PUT se utiliza para actualizaciones
-Route::put('/categories/{category} ','CategoriesController@metodoActualizar')
+Route::put('/{category} ','CategoriesController@metodoActualizar')
 //Nombrando ruta
 ->name('categories.editarcategoria')
 ;
@@ -158,7 +160,7 @@ Route::put('/categories/{category} ','CategoriesController@metodoActualizar')
 
 //INICIO - Ruta para eliminar una categoria 
 
-Route::delete('categories/{category}','CategoriesController@metodoEliminar')
+Route::delete('{category}','CategoriesController@metodoEliminar')
 //Nombrando la ruta
 ->name('categories.eliminarcategoria')
 ;
