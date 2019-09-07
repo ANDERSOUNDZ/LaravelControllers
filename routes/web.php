@@ -94,6 +94,9 @@ Route::delete('categories/{category}','CategoriesController@metodoEliminar')
 //-------------------------------FIN - Clase Rutas con controlador Independientes--------------------------------------------
 
 //------------------------------- INICIO - Clase Rutas con controlador Agrupadas--------------------------------------------
+
+/*
+
 //INICIO - Crear un grupo de rutas para definir las rutas de manera optima
 
 Route::group(['prefix' =>'categories'], function (){
@@ -167,4 +170,24 @@ Route::delete('{category}','CategoriesController@metodoEliminar')
 
 });
 //FIN - Crear un grupo de rutas para definir las rutas de manera optima
+
+*/
+
 //------------------------------- FIN - Clase Rutas con controlador Agrupadas--------------------------------------------
+
+//------------------------INICIO - Optimizar el codigo de agrupacion de rutas--------------------------
+
+//Utilizamos la funcion "resource()" , este con una sola linea de codigo , nos permite llamar a todas las funciones que tenemos para hacer las acciones de las peticiones http que son , Create, Update, Delete, y mostrar
+//de esta manera llamamos a todas las rutas si hacerlas una por una manuelamente
+Route::
+//utilizamos la funcion resource
+resource(
+    //creamos el prefijo o nombramos el prefijo de la ruta base
+    'categories',
+    //y luego llamamos al controlador que contiene laas funciones de las peticiones http
+    'CategoriesController'
+);    
+
+//esto nos permite llamar a todos los metodos y ejecutar las peticiones
+
+//------------------------FIN - Optimizar el codigo de agrupacion de rutas--------------------------
